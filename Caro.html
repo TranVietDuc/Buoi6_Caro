@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="font-size: 32px">Tic Tac Toe</h1>
+<p id="board"></p>
+<br/>
+<br/>
+
+<script>
+    var board = [];
+    var n = "";
+    for ( let i = 0; i< 8; i++){
+        board[i] = new Array(0,0,0,0,0,0,0,0);
+    }
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            n = n + board[i][j] + "&nbsp;&nbsp;";
+        }
+        n = n + "<br/>";
+    }
+    n += "<br/><input type='button' value='Play' onclick='Play()'>";
+    document.write(n);
+    function Play(i,j)
+    {
+       i= parseInt(prompt("Insert i: "));
+       j= parseInt(prompt("Insert j: "));
+       n="";
+        board[i][j] = 'X';
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
+                n = n + board[i][j] + "&nbsp;&nbsp;&nbsp;";
+            }
+            n = n + "<br/>";
+        }
+        n += "<br/><input type='button' value='Play' onclick='Play()'>";
+        document.write(n);
+    }
+</script>
+</body>
+</html>
